@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: process.env.CLIENT_URL || "https://chat-back-end-ten.vercel.app/",
+        origin: process.env.CLIENT_URL || "http://localhost:5173",
         methods: ["GET", "POST"],
     },
 });
@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "https://chat-back-end-ten.vercel.app/",
+        origin: process.env.CLIENT_URL || "http://localhost:5173",
         credentials: true,
     })
 );
